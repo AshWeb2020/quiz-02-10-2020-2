@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Second Lab Quiz</title>
+    <link rel="stylesheet" href="lab-two.css" />
+    <script src="lab-two.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function applyme() {
+        const carHelp = {
+          volvo: "Family Car",
+          saab: "Obsolete Car",
+          mercedes: "Luxury Car",
+          audi: "Sporty",
+        };
+        const select = document.getElementById("my-select");
+        const myValue = document.getElementById("my-value");
+        const helpText = document.getElementById("help-text");
+        myValue.innerHTML = select.value;
+        // use value as a "key" to display the help text
+        helpText.innerHTML = carHelp[select.value];
+        console.log("apply me called");
+
+        // this will log an error because only form elements have a value
+        console.log(document.getElementById("vertical").value);
+        // this will log the text
+        console.log(document.getElementById("vertical").innerText);
+      }
+    </script>
+
+    <span id="vertical"
+      >This is your first web technology coding quiz. Align me vertically at the
+      center of the page using the external css file(lab-two.css)</span
+    >
+
+    <form>
+      <label for="cars">Choose a car:</label>
+
+      <select id="my-select" onchange="applyme()">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+      <label for="my-color">Pick a color for the text below</label>
+      <select name="my-color" id="my-color" onchange="changeColor()">
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="purple">purple</option>
+        <option value="yellow">yellow</option>
+      </select>
+    </form>
+
+    <span id="my-value">
+      <!-- the value of the selected dropdown should appear in this span using the applyme javascript function. This is not to be centered on the page -->
+    </span>
+    <span id="help-text"></span>
+    <p id="color-change">
+      <!-- using an external javascript file (lab-two.js). Change the color of the text in this span to green. This content should not be at the center -->
+      My text color was change to green from javascript
+    </p>
+  </body>
+</html>

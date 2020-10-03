@@ -1,0 +1,9 @@
+/* see https://stackoverflow.com/questions/37754621/how-to-vertically-center-text-in-a-span 
+   but also see this stackblitz for why in some more detail
+*/
+#vertical {
+  min-height: 300px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
